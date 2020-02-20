@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="catalogue">Catalogue</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="contacts">Contacts</a>
+        </li>
+        <li class="nav-item" *ngIf=(!auth.isLoggedIn)>
+            <a class="nav-link" routerLink="login">Login</a>
+        </li>
+        <li class="nav-item" *ngIf=(!auth.isLoggedIn)>
+            <a class="nav-link" routerLink="register">Register</a>
+        </li>
+    </ul>
+    <button class="btn btn-danger" *ngIf=(auth.isLoggedIn) routerLink="/add-product">Add Product</button>
+    <button class="btn" *ngIf=(auth.isLoggedIn) (click)="signOut()">Sign Out</button>
+    <span class="user-name" *ngIf=(auth.isLoggedIn)>(Hello <a routerLink="user-detail">{{ auth?.userData?.email }}</a>)</span>
+</nav>

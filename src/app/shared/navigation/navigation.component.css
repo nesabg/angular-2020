@@ -1,0 +1,12 @@
+.user-name {
+    font-style: italic;
+    color: red;
+}
+
+nav {
+    margin-bottom: 50px;
+}
+
+nav .btn {
+    margin-left: 20px;
+}

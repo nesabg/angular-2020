@@ -1,0 +1,12 @@
+<div *ngIf="user" class="row">
+    <div class="col-3">
+        <img src="{{ user.imageURL }}" alt="">
+    </div>
+    <div class="col-9">
+        <h2>{{ user.publicName }}</h2>
+        <h4>Contacts:</h4>
+        <p>Phone: <a href="tel:{{ user.phone }}">{{ user.phone }}</a></p>
+        <p>Adress: {{ user.address }}</p>
+        <p>Email address: <a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<h1>Add product</h1>
+
+
+<form #createProductForm="ngForm" (ngSubmit)="createProduct(createProductForm.value)">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input ngModel class="form-control" type="text" id="title" name="title" required >
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea ngModel class="form-control" id="description" name="description" required ></textarea>
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label>
+        <input ngModel class="form-control" type="text" id="category" name="category" required >
+    </div>
+    <div class="form-group">
+                <label for="qty">Quantity</label>
+                <input ngModel class="form-control" type="number" id="qty" name="qty" required >
+            </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input ngModel class="form-control" type="number" id="price" name="price" required >
+    </div>
+    <div class="form-group">
+        <label for="imgURL">Image url</label>
+        <input ngModel class="form-control" type="url" id="imgURL" name="imgURL" required>
+    </div>
+    <button class="btn btn-lg btn-block btn-primary" [disabled]="createProductForm.invalid">Create product</button>
+</form>
+
+{{createProductForm.valid}}

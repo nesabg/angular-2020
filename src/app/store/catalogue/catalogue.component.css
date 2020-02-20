@@ -1,0 +1,16 @@
+.product-grid {
+    width: 30%;
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+}
+.list-group-item {
+    cursor: pointer;
+}
+.img {
+    width: 100%
+}
+
+.img img {
+    width: 100%;
+}

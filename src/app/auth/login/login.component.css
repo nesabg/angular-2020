@@ -1,0 +1,11 @@
+.row {
+    padding: 150xp 0;
+}
+.col-4 {
+    width: 100%;
+    text-align: center;
+}
+.col-4 img {
+    width: 70%;
+    margin-top: -50px;
+}
