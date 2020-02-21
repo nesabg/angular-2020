@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from '../crud.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
+import { pipe } from 'rxjs';
 
 @Component({
   selector: 'app-edit-product',
@@ -13,16 +15,16 @@ export class EditProductComponent implements OnInit {
 
   constructor(
     private crud: CrudService,
-    private activatedRoute: ActivatedRoute,
+    private aRoute: ActivatedRoute,
     private router: Router
-  ) { }
-
-  ngOnInit() {
-    this.crud.getSingleProduct(this.activatedRoute.snapshot.params.id)
-      .subscribe(res => {
-        console.log(res.payload.data());
-        this.productData = res.payload.data();
-      });
+  ) {
+    this.crud.getSingleProduct(this.aRoute.snapshot.params.id).subscribe(res => this.productData = res.payload.data());
   }
+  ngOnInit() {}
 
+  updateProductHandler(data: {}) {
+    this.router.navigate(['catalogue']);
+    console.log(this.aRoute.snapshot.params.id);
+    this.crud.updateProduct(data, this.aRoute.snapshot.params.id);
+  }
 }

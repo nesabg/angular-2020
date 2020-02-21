@@ -1,14 +1,14 @@
 <div *ngIf="singleProduct" class="row">
     <div class="col-4">
         <p class="img"><img src="{{ singleProduct.imgURL }}" alt=""></p>
-        <button class="btn btn-warning" *ngIf="auth.isLoggedIn" routerLink="edit">Edit product</button>
+        <button class="btn btn-warning" *ngIf="auth.isLoggedIn" [routerLink]="['/catalogue',this.activatedRoute.snapshot.params.id, 'edit']" >Edit product</button>
         <button class="btn btn-danger" *ngIf="auth.isLoggedIn" (click)="deleteHandler()">Delete product</button>
     </div>
     <div class="col-8">
         <h1>{{ singleProduct.title }}</h1>
-        <p>{{singleProduct.description}}</p>
-        <p><span class="badge badge-success">Avaibility is: {{singleProduct.qty}}   </span> </p>
-        <p><span class="mr-auto">The price is: {{singleProduct.price}} BGN</span></p>
+        <p>{{ singleProduct.description }}</p>
+        <p><span class="badge badge-success">Avaibility is: {{ singleProduct.qty }}   </span> </p>
+        <p><span class="mr-auto">The price is: {{ singleProduct.price }} BGN</span></p>
     </div>
 
 </div>

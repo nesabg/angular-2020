@@ -1,6 +1,4 @@
-import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -10,6 +8,9 @@ import { AddProductComponent } from './store/add-product/add-product.component';
 import { ProductComponent } from './store/product/product.component';
 import { UserDetailComponent } from './auth/user-detail/user-detail.component';
 import { EditProductComponent } from './store/edit-product/edit-product.component';
+import { SingleProductResolver } from './store/singleProduct.resolver';
+import { NgModule } from '@angular/core';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRouts: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full'},
@@ -22,6 +23,14 @@ const appRouts: Routes = [
   { path: 'catalogue/:id' , component: ProductComponent},
   { path: 'catalogue/:id/edit' , component: EditProductComponent},
   { path: 'add-product' , component: AddProductComponent},
+  { path: '**' , component: NotFoundComponent},
 ];
 
-export const AppRoutingModule = RouterModule.forRoot(appRouts);
+@NgModule({
+  imports: [RouterModule.forRoot(appRouts)],
+  exports: [RouterModule]
+})
+
+export class AppRoutingModule {}
+
+// resolve: { productData: SingleProductResolver}

@@ -33,5 +33,9 @@ export class CrudService {
   deleteProduct(id: string) {
     return this.db.collection('catalogue').doc(id).delete();
   }
+
+  updateProduct(data: {}, id: string) {
+    return this.db.collection('catalogue').doc(id).update(data);
+  }
 }
 

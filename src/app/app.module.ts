@@ -16,6 +16,7 @@ import { AuthModule } from './auth/auth.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from './store/store.module';
 import { FooterComponent } from './shared/footer/footer.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -38,7 +39,8 @@ const config = {
     NavigationComponent,
     HomeComponent,
     ContactsComponent,
-    FooterComponent
+    FooterComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
