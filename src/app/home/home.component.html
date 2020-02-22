@@ -1,3 +1,20 @@
-<p>home works!</p>
+<h1>демо проeкт СОФТУНИ - ANGULAR</h1>
+<h3>Промо оферти!!!</h3>
+<div class="row">
+  <div *ngIf="!promoProducts">There is no products to show</div>
 
-
+  <div class="product-grid" *ngFor="let product of promoProducts">
+    <a
+      class="list-group-item"
+      (click)="singleProductHandler(product.payload.doc.id)"
+    >
+      <p class="img">
+        <img src="{{ product.payload.doc.data().imgURL }}" alt="" />
+      </p>
+      <h2>{{ product.payload.doc.data().title }}</h2>
+      <p>Avaibility: {{ product.payload.doc.data().qty }}</p>
+      <h5>{{ product.payload.doc.data().category }}</h5>
+      <h4>Price: {{ product.payload.doc.data().price }} BGN</h4>
+    </a>
+  </div>
+</div>

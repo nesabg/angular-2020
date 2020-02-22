@@ -14,19 +14,12 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private actRoute: ActivatedRoute,
+    private aRoute: ActivatedRoute,
     private crud: CrudService
-    ) {
-      this.url = this.router.url.substr(1);
-    }
+    ) {}
 
   ngOnInit() {
-    if (this.url.includes('/')) {
-      this.crud.getSingleProduct(this.url.substr(9)).subscribe(res => {
-      });
-      } else {
-      console.log('no');
-    }
+      console.log(this.router.url);
   }
 
 }

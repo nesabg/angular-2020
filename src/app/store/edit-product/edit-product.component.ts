@@ -18,13 +18,14 @@ export class EditProductComponent implements OnInit {
     private aRoute: ActivatedRoute,
     private router: Router
   ) {
+
     this.crud.getSingleProduct(this.aRoute.snapshot.params.id).subscribe(res => this.productData = res.payload.data());
   }
   ngOnInit() {}
 
   updateProductHandler(data: {}) {
+
     this.router.navigate(['catalogue']);
-    console.log(this.aRoute.snapshot.params.id);
     this.crud.updateProduct(data, this.aRoute.snapshot.params.id);
   }
 }

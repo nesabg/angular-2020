@@ -6,3 +6,6 @@
     color: white;
     background-color: #dc3545;
 }
+p {
+    margin: 0 !important;
+}

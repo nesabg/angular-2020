@@ -8,7 +8,6 @@ import { AddProductComponent } from './store/add-product/add-product.component';
 import { ProductComponent } from './store/product/product.component';
 import { UserDetailComponent } from './auth/user-detail/user-detail.component';
 import { EditProductComponent } from './store/edit-product/edit-product.component';
-import { SingleProductResolver } from './store/singleProduct.resolver';
 import { NgModule } from '@angular/core';
 import { NotFoundComponent } from './not-found/not-found.component';
 

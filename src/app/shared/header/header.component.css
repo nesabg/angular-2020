@@ -4,6 +4,8 @@
     margin-bottom: 40px;
     padding: 70px 0;
     background-color: #dc3545;
+    background-image: url(https://nesa.bg/header-backgound-image.jpg);
+    background-repeat: no-repeat;
 }
 
 .header h1 {
