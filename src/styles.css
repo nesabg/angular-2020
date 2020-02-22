@@ -2,3 +2,8 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Rubik', "Helvetica Neue", sans-serif; }
+
+h1 {
+    text-align: center;
+    color: #dc3545;
+}
