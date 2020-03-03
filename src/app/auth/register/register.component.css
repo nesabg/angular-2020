@@ -6,3 +6,6 @@ label {
 input {
     margin: 5px;
 }
+form {
+    margin-bottom: 50px;
+}

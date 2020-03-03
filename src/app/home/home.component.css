@@ -70,4 +70,7 @@ h1 {
     height: 250px;
     overflow: hidden;
   }
+  .row {
+      margin-bottom: 50px;
+  }
   
